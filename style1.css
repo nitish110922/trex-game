@@ -1,0 +1,356 @@
+*
+{
+    padding: 0px;
+    margin: 0px;
+     box-sizing: border-box;
+}
+body{
+    display:grid;
+    place-items: center ;
+    background-image:url(bg4.jpg);
+     background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vh;
+
+    
+}
+
+.back{
+    animation: bc 120s  infinite;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vh;
+
+}
+
+@keyframes bc {
+    1%{
+        background-image: url(bg4.jpg);
+    }
+
+    25%{
+        background-image: url(Picsart_23-03-21_19-48-07-483.jpg);
+    }
+    50%{
+        background-image: url(Picsart_23-03-21_19-48-12-881.jpg) ;
+    }
+    75%{
+        background-image: url(Picsart_23-03-21_19-48-16-058.jpg);
+    }
+
+}
+.container{
+    height: 400px;
+    width: 1000px;
+    position: relative;
+    overflow: hidden;
+   
+   
+}
+ #dino{
+    height: 140px;
+    width: 100px;
+    position: absolute;
+     bottom: -8px; 
+   
+    left: 25px ;
+    
+    
+
+ }
+ #dino img{
+    height: 140px;
+    width: 100px;
+    color: black;
+    
+}
+
+
+
+
+
+  .dinoActive {
+    animation: animateDino 0.6s linear infinite;
+}
+
+@keyframes animateDino {
+
+    0% {
+        bottom: 28px;
+    }
+
+    25%{
+        bottom: 100px;
+    }
+    50% {
+        bottom : 172px;
+    }
+
+    75%{
+        bottom: 100px;
+    }
+    100%{
+        bottom: 28px;
+    }
+}
+
+
+.container #cactus1
+{
+    height: 70px;
+    width: 50px;
+    position: absolute;
+    bottom: 30px;
+      right: -100px;   
+    
+    
+}
+.container #cactus1 img{  
+        height: 70px;
+        width: 50px;
+       
+    
+}
+ .cactus1Active {
+    animation: cactus1Animate 9s linear infinite;
+}
+
+@keyframes cactus1Animate {
+    0% {
+        right: -50px;
+    }
+
+
+    25%{
+
+        right: 450 px;
+    }
+    40%{
+        right: 730px;
+    }
+    45%{
+        right: 830px;
+    }
+    50%{
+        right: 930px;
+    }
+    55%{
+        right : 1030px;
+    }
+    60%{
+        right : 1200px;
+    }
+    75%{
+        right: 1300px;
+    }
+
+    100% {
+        right: 1800px;
+    }
+} 
+
+
+
+
+
+
+.container #cactus
+{
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    bottom: 40px;
+    right: 10px; 
+    
+}
+.container #cactus img{  
+        height: 90px;
+        width: 70px;
+       
+    
+}
+ .cactusActive {
+    animation: cactusAnimate 6s linear infinite;
+}
+
+@keyframes cactusAnimate {
+    0% {
+        right: 0px;
+    }
+
+    25%{
+        right : 450 px;
+    }
+
+    50%{
+        right : 900px;
+    }
+
+    75% {
+        right: 1350px;
+    }
+    100%{
+        right: 1800px;
+    }
+}
+
+
+
+
+
+
+
+.container #obs1
+{
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    bottom: 140px;
+  right: -60px; 
+    
+    
+}
+.container #obs1 img{  
+        height: 70px;
+        width: 70px;
+    }
+
+ .obs1Active {
+    animation: obs1Animate 12s linear infinite;
+}
+
+@keyframes obs1Animate {
+    0% {
+        right: -160px;
+    }
+
+    25%{
+        right : 450 px;
+    }
+
+    50%{
+        right : 900px;
+    }
+
+    75% {
+        right: 1350px;
+    }
+    100%{
+        right: 1700px;
+    }
+} 
+
+.gm{
+color: red;
+
+}
+
+
+
+.container #road{
+    height: 30px;
+    width: 1200px;
+    position: absolute;
+    bottom: 10px;
+
+}
+.container #road img{
+    height: 30px;
+    width: 2000px;
+    position: absolute;
+    left: 0;
+   
+}
+
+.roadac{
+    animation: roadAnimate 3.5s linear infinite; 
+}
+
+
+@keyframes roadAnimate {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -800px;
+    }
+}
+
+
+ #playername{
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    left: 1300px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+ #score{
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 80px;
+    left: 1300px;
+    font-size: 20px;
+    font-weight: bold;
+    font-weight: 10000;
+    color: white;
+
+}
+#highscore{
+    height: auto;
+    width: auto;
+    position: absolute;
+    font-size: 22px;
+    top: 52px; 
+    left: 1300px;
+    font-weight: bold;
+    color: white;
+    font-weight: 10000;
+}
+
+
+
+
+.container #gameover{
+    height: auto;
+    width: auto;
+    position: absolute;
+     font-size: 40px;
+    top: 100px;
+    left: 300px;
+    font-weight: bold;
+    font-weight: 10000;
+}
+
+ #logout{
+ 
+    position: absolute;
+    font-size: 22px; 
+    top: 70px; 
+    left: 80px;
+    background: linear-gradient(45deg, #00ccff, #5d42f8) no-repeat center;
+    
+    overflow: hidden;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 5px; 
+   color: black;
+    
+   
+}
+
+#logout:hover{
+    cursor: pointer;
+    background: rgb(213, 24, 24);
+   
+}
+

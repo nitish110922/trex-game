@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trext</title>
+    <link rel="stylesheet" href="style1.css">
+    
+
+</head>
+<body id="body">
+  <div class="box">
+  <div id="playername">PLAYER NAME</div>
+  <div id="score">your score : 00</div>
+  <div id="highscore">High score <b>00</b></div>
+</div>
+
+<input type="submit" id="logout" class="btn" value="Log out" /> 
+    <div class="container" id="game"> 
+        <div id="dino" class="dino">  
+            <img  id="dinoimage" src="dino.png">  
+        </div>
+        <div id="cactus">
+            <img   src="cactus.png"> 
+        </div>
+        <div id="cactus1">
+          <img   src="big-cactus3.png"> 
+      </div>
+        <div id="obs1"  ><img src="output-onlinegiftools.gif" alt="">
+             </div>
+        <div id="road">
+            <img src="road.png" >
+        </div> 
+       
+        <div id="gameover">CLICK ENTER TO START</div>  
+  
+        
+    </div>
+    <script src="script.js"></script>
+   
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+        import { getDatabase, set, ref, update,  onValue, get } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from  "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+       
+        const firebaseConfig = {
+          
+          apiKey: "AIzaSyDW6fulxFYK2hESIXmkNGDv18A-US5zVrQ",
+    authDomain: "dinosaur-game-1601f.firebaseapp.com",
+    databaseURL: "https://dinosaur-game-1601f-default-rtdb.firebaseio.com",
+    projectId: "dinosaur-game-1601f",
+    storageBucket: "dinosaur-game-1601f.appspot.com",
+    messagingSenderId: "541241862846",
+    appId: "1:541241862846:web:acc34e8fc415f27e558cef"
+  };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+        let logout = document.getElementById('logout')
+     const user = auth.currentUser;
+       onAuthStateChanged(auth, (user) => {
+         if (user) {
+
+          const uid = user.uid;
+          const starCountRef = ref(database, 'users/' + uid);
+        onValue(starCountRef, (snapshot) => {
+            const data = snapshot.val();
+            document.getElementById("playername").innerHTML = data.username
+            
+           let high1 = data.highscore
+         
+           logout.addEventListener('click',(e)=>{
+      
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        update(ref(database, 'users/' + uid), {
+         highscore : high1
+       });
+        location.replace('index.html')
+        alert('log out successfully !');
+      }).catch((error) => {
+        // An error happened.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+   
+           alert(errorMessage);
+      });
+   
+   });
+
+            setInterval(() => {
+            high = Math.max(high,playerScore);
+           high1 = Math.max(high1,high)
+           highscore.innerHTML ="High score :" + high1;
+          
+          }, 50);
+        });
+       
+        } 
+      });
+      
+     
+      
+
+
+
+
+
+
+        </script>
+    
+
+</body>
+</html>
